@@ -1,9 +1,5 @@
 class EntriesController < ApplicationController
-end
 
-def index
-  @entries = Entry.all
-end
 
 def show
   @entry = Entry.find_by({"id" => params["id"]})
@@ -27,4 +23,6 @@ def create
   @entry.save
 
   redirect_to "/places/#{@entry["place_id"]}"
+end
+
 end
